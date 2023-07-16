@@ -20,10 +20,13 @@ pipeline
 			steps { checkout([ $class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/KieranYu/JenkinsTesting.git']] ]) } 
 		} 
 			
-		stage(' Unit Testing') { steps { sh """ echo "Running Unit Tests" """ } } 
+		stage(' Unit Testing') { 
+			steps { sh """ echo "Running Unit Tests" """ } 		
+		} 
 		
 		stage('Code Analysis') { 
-			steps { sh """ echo "Running Code Analysis" """ } } 
+			steps { sh """ echo "Running Code Analysis" """ } 		
+		} 
 		
 		stage('Build Deploy Code') { 
 			when { branch 'develop' } 
