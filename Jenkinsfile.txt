@@ -19,7 +19,7 @@ pipeline
 		*/
 		
 		stage('Code Checkout') {
-			steps { checkout([ $class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/KieranYu/JenkinsTesting.git']] ]) } 
+			steps { checkout([ $class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/KieranYu/JenkinsTesting.git']] ]) } 
 		} 
 			
 		stage(' Unit Testing') { 
